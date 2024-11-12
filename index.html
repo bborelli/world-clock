@@ -18,28 +18,50 @@
     <div class="main-content">
       <div class="container">
         <h1>Borelli World's Clock</h1>
-        <select>
-          <option value="">Choose a city</option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
+        <select id="city">
+          <option value="">
+            Discover if your fav city in the world is also one of mine...
+          </option>
+          <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
+          <option value="Europe/Lisbon">Lisbon 🇵🇹</option>
+          <option value="Europe/Paris">Paris 🇫🇷</option>
+          <option value="America/Sao_Paulo">Rio de Janeiro 🇧🇷</option>
         </select>
 
-        <div class="city" id="carmel">
-          <div>
-            <h2>Carmel 🇺🇸</h2>
-            <div class="date"></div>
-          </div>
-          <div class="time"></div>
-        </div>
+        <div class="cities" id="selected-city">
+          <div class="cities">
+            <div class="city" id="carmel">
+              <div>
+                <h2>Carmel 🇺🇸</h2>
+                <div class="date"></div>
+              </div>
+              <div class="time"></div>
+            </div>
 
-        <div class="city" id="lapopie">
-          <div>
-            <h2>Saint-Cirq-Lapopie 🇫🇷</h2>
-            <div class="date"></div>
+            <div class="city" id="alagoas">
+              <div>
+                <h2>Ilha do Ferro 🇧🇷</h2>
+                <div class="date"></div>
+              </div>
+              <div class="time"></div>
+            </div>
+
+            <div class="city" id="lapopie">
+              <div>
+                <h2>Saint-Cirq-Lapopie 🇫🇷</h2>
+                <div class="date"></div>
+              </div>
+              <div class="time"></div>
+            </div>
+
+            <div class="city" id="thailand">
+              <div>
+                <h2>Chiang Mai 🇹🇭</h2>
+                <div class="date"></div>
+              </div>
+              <div class="time"></div>
+            </div>
           </div>
-          <div class="time"></div>
         </div>
       </div>
       <footer>
