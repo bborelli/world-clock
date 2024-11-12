@@ -43,13 +43,13 @@ function updateCity(event) {
   let cityTime = moment().tz(cityTimeZone);
 
   let cityNames = {
-    "Asia/Tokyo": "Tokyo",
-    "Europe/Lisbon": "Lisbon",
-    "Europe/Paris": "Paris",
-    "America/Sao_Paulo": "Rio de Janeiro",
+    "Africa/Casablanca": "Fès <small>(MAR)</small>",
+    "Europe/Lisbon": "Lisbon <small>(PRT)</small>",
+    "Europe/Paris": "Paris <small>(FRA)</small>",
+    "America/Sao_Paulo": "Rio de Janeiro <small>(BRA)</small>",
   };
 
-  let cityName = cityNames[cityTimeZone];
+  let cityName = cityNames[cityTimeZone] || "City not found";
 
   let selectedCityElement = document.querySelector("#selected-city");
   selectedCityElement.innerHTML = `
@@ -60,6 +60,7 @@ function updateCity(event) {
       </div>
       <div class="time">${cityTime.format("hh:mm [<small>]A[</small>]")}</div>
     </div>
+    <a href="/">All cities</>
   `;
 }
 

@@ -4,75 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&family=Indie+Flower&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.46/moment-timezone-with-data.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
-    <title>Borelli World's Clock</title>
+    <title>World Clock - Bruna Borelli</title>
   </head>
   <body>
     <div class="main-content">
       <div class="container">
-        <h1>Borelli World's Clock</h1>
+        <div class="header">
+          <h1>Borelli World's Clock</h1>
+          <img src="src/icons/colorful-world.png" alt="World Icon" />
+        </div>
         <select id="city">
           <option value="">
             Discover if your fav city in the world is also one of mine...
           </option>
-          <option value="Asia/Tokyo">Tokyo 🇯🇵</option>
+          <option value="Africa/Casablanca">F&egrave;s 🇲🇦</option>
           <option value="Europe/Lisbon">Lisbon 🇵🇹</option>
           <option value="Europe/Paris">Paris 🇫🇷</option>
           <option value="America/Sao_Paulo">Rio de Janeiro 🇧🇷</option>
         </select>
 
-        <div class="cities" id="selected-city">
-          <div class="cities">
-            <div class="city" id="carmel">
-              <div>
-                <h2>Carmel 🇺🇸</h2>
-                <div class="date"></div>
-              </div>
-              <div class="time"></div>
-            </div>
+        <div id="selected-city"></div>
 
-            <div class="city" id="alagoas">
-              <div>
-                <h2>Ilha do Ferro 🇧🇷</h2>
-                <div class="date"></div>
-              </div>
-              <div class="time"></div>
+        <div class="cities">
+          <div class="city" id="carmel">
+            <div>
+              <h2>Carmel <small>(USA)</small></h2>
+              <div class="date"></div>
             </div>
+            <div class="time"></div>
+          </div>
 
-            <div class="city" id="lapopie">
-              <div>
-                <h2>Saint-Cirq-Lapopie 🇫🇷</h2>
-                <div class="date"></div>
-              </div>
-              <div class="time"></div>
+          <div class="city" id="alagoas">
+            <div>
+              <h2>Ilha do Ferro <small>(BRA)</small></h2>
+              <div class="date"></div>
             </div>
+            <div class="time"></div>
+          </div>
 
-            <div class="city" id="thailand">
-              <div>
-                <h2>Chiang Mai 🇹🇭</h2>
-                <div class="date"></div>
-              </div>
-              <div class="time"></div>
+          <div class="city" id="lapopie">
+            <div>
+              <h2>Saint-Cirq-Lapopie <small>(FRA)</small></h2>
+              <div class="date"></div>
             </div>
+            <div class="time"></div>
+          </div>
+
+          <div class="city" id="thailand">
+            <div>
+              <h2>Chiang Mai <small>(THA)</small></h2>
+              <div class="date"></div>
+            </div>
+            <div class="time"></div>
           </div>
         </div>
       </div>
       <footer>
         Coded by
         <a href="https://github.com/bborelli" target="_blank">Bruna Borelli</a>,
-        open-sourced in
+        open-sourced on
         <a href="https://github.com/bborelli/world-clock" target="_blank"
           >GitHub</a
         >.
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
-  <script src="src/index.js"></script>
 </html>
