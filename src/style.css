@@ -114,6 +114,7 @@ select#city {
   padding: 40px;
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
+  box-sizing: border-box;
 }
 
 footer {
@@ -130,7 +131,7 @@ a {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .container {
@@ -139,26 +140,26 @@ a {
 
   .city-name,
   .time {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   select#city {
-    font-size: 12px;
+    font-size: 14px;
     padding: 6px;
   }
 }
 
 @media (max-width: 600px) {
   h1 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .city-name {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   .time {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .container {
@@ -166,7 +167,7 @@ a {
   }
 
   select#city {
-    font-size: 12px;
+    font-size: 14px;
     padding: 6px;
   }
 }
