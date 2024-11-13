@@ -5,7 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+  padding: 10px;
   margin: 0;
   background-color: #f9f7fe;
   overflow-x: hidden;
@@ -15,7 +15,7 @@ h1 {
   font-size: 32px;
   margin: 0;
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   text-align: center;
 }
 
@@ -23,7 +23,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
   background-color: rgba(50, 50, 80, 0.8);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px;
@@ -38,20 +38,20 @@ h1 {
 #selected-city .time-wrapper {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
   margin-top: 5px;
 }
 
 #selected-city h2,
 .city h2 {
-  font-size: 18px;
+  font-size: 16px;
   margin: 0;
   text-align: center;
 }
 
 #selected-city .time,
 .city .time {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
 }
 
@@ -63,14 +63,14 @@ h1 {
 }
 
 .icon {
-  width: 30px;
+  width: 25px;
   height: auto;
 }
 
 .cities {
-  margin-top: 20px;
+  margin-top: 15px;
   background-color: rgba(20, 24, 44, 0.8);
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 8px;
 }
@@ -79,7 +79,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 25px;
+  padding: 10px 15px;
   border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
 }
 
@@ -113,7 +113,7 @@ select#city {
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/189/original/Blue_Illustration_Night_Phone_Wallpaper.png?1731462211");
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 40px;
+  padding: 30px;
   border-radius: 10px;
   box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 29px 0px;
   box-sizing: border-box;
