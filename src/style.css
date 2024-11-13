@@ -8,11 +8,13 @@ body {
   padding: 20px;
   margin: 0;
   background-color: #f9f7fe;
+  overflow-x: hidden;
 }
 
 h1 {
   font-size: 32px;
   margin: 0;
+  margin-top: 20px;
   margin-bottom: 30px;
   text-align: center;
 }
@@ -104,7 +106,7 @@ select#city {
 }
 
 .container {
-  max-width: 400px;
+  max-width: 100%;
   width: 100%;
   background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/150/189/original/Blue_Illustration_Night_Phone_Wallpaper.png?1731462211");
   background-size: cover;
@@ -126,17 +128,41 @@ a {
   color: grey;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   h1 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .container {
     padding: 20px;
   }
 
+  .city-name,
   .time {
+    font-size: 18px;
+  }
+
+  select#city {
+    font-size: 12px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
     font-size: 24px;
+  }
+
+  .city-name {
+    font-size: 16px;
+  }
+
+  .time {
+    font-size: 20px;
+  }
+
+  .container {
+    padding: 10px;
   }
 
   select#city {
