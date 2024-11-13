@@ -18,53 +18,56 @@
       <div class="container">
         <div class="header">
           <h1>Borelli World's Clock</h1>
-          <img src="src/icons/colorful-world.png" alt="World Icon" />
         </div>
-        <select id="city">
-          <option value="">
-            Discover if your fav city in the world is also one of mine...
-          </option>
-          <option value="Africa/Casablanca">F&egrave;s 🇲🇦</option>
-          <option value="Europe/Lisbon">Lisbon 🇵🇹</option>
-          <option value="Europe/Paris">Paris 🇫🇷</option>
-          <option value="America/Sao_Paulo">Rio de Janeiro 🇧🇷</option>
-        </select>
 
-        <div id="selected-city"></div>
+        <div id="selected-city" class="selected-city">
+          <div class="city-info">
+            <h2>Your local time:</h2>
+          </div>
+          <div class="time-wrapper">
+            <img src="src/icons/big-world.png" alt="World Icon" class="icon" />
+            <div class="time"></div>
+          </div>
+        </div>
 
         <div class="cities">
           <div class="city" id="carmel">
-            <div>
+            <div class="city-info">
               <h2>Carmel <small>(USA)</small></h2>
               <div class="date"></div>
             </div>
             <div class="time"></div>
           </div>
-
           <div class="city" id="alagoas">
-            <div>
+            <div class="city-info">
               <h2>Ilha do Ferro <small>(BRA)</small></h2>
               <div class="date"></div>
             </div>
             <div class="time"></div>
           </div>
-
           <div class="city" id="lapopie">
-            <div>
+            <div class="city-info">
               <h2>Saint-Cirq-Lapopie <small>(FRA)</small></h2>
               <div class="date"></div>
             </div>
             <div class="time"></div>
           </div>
-
           <div class="city" id="thailand">
-            <div>
+            <div class="city-info">
               <h2>Chiang Mai <small>(THA)</small></h2>
               <div class="date"></div>
             </div>
             <div class="time"></div>
           </div>
         </div>
+
+        <select id="city">
+          <option value="">More of my fav cities here...</option>
+          <option value="Africa/Casablanca">Fès 🇲🇦</option>
+          <option value="Europe/Lisbon">Lisbon 🇵🇹</option>
+          <option value="Europe/Paris">Paris 🇫🇷</option>
+          <option value="America/Sao_Paulo">Rio de Janeiro 🇧🇷</option>
+        </select>
       </div>
       <footer>
         Coded by
@@ -75,6 +78,6 @@
         >.
       </footer>
     </div>
-    <script src="src/index.js"></script>
+    <script src="src/index.js" defer></script>
   </body>
 </html>

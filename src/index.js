@@ -1,71 +1,54 @@
-function updateTime() {
-  let carmelElement = document.querySelector("#carmel");
-  let carmelDateElement = carmelElement.querySelector(".date");
-  let carmelTimeElement = carmelElement.querySelector(".time");
-  let carmelTime = moment().tz("America/Indiana/Indianapolis");
+document.addEventListener("DOMContentLoaded", function () {
+  function displayUserLocationTime() {
+    const userTimeZone = moment.tz.guess();
+    const userTime = moment().tz(userTimeZone);
+    document.querySelector("#selected-city .time").innerHTML = userTime.format(
+      "hh:mm [<small>]A[</small>]"
+    );
+  }
 
-  carmelDateElement.innerHTML = carmelTime.format("dddd, Do");
-  carmelTimeElement.innerHTML = carmelTime.format("hh:mm [<small>]A[</small>]");
+  function updateTime() {
+    const cityData = [
+      { id: "carmel", timezone: "America/Indiana/Indianapolis" },
+      { id: "alagoas", timezone: "America/Maceio" },
+      { id: "lapopie", timezone: "Europe/Paris" },
+      { id: "thailand", timezone: "Asia/Bangkok" },
+    ];
 
-  let alagoasElement = document.querySelector("#alagoas");
-  let alagoasDateElement = alagoasElement.querySelector(".date");
-  let alagoasTimeElement = alagoasElement.querySelector(".time");
-  let alagoasTime = moment().tz("America/Maceio");
+    cityData.forEach((city) => {
+      const cityElement = document.querySelector(`#${city.id}`);
+      cityElement.querySelector(".date").innerHTML = moment()
+        .tz(city.timezone)
+        .format("dddd, Do");
+      cityElement.querySelector(".time").innerHTML = moment()
+        .tz(city.timezone)
+        .format("hh:mm [<small>]A[</small>]");
+    });
+  }
 
-  alagoasDateElement.innerHTML = alagoasTime.format("dddd, Do");
-  alagoasTimeElement.innerHTML = alagoasTime.format(
-    "hh:mm [<small>]A[</small>]"
-  );
+  function updateCity(event) {
+    const cityTimeZone = event.target.value;
+    if (!cityTimeZone) return;
 
-  let lapopieElement = document.querySelector("#lapopie");
-  let lapopieDateElement = lapopieElement.querySelector(".date");
-  let lapopieTimeElement = lapopieElement.querySelector(".time");
-  let lapopieTime = moment().tz("Europe/Paris");
+    const cityTime = moment().tz(cityTimeZone);
+    const cityNames = {
+      "Africa/Casablanca": "Fès <small>(MAR)</small>",
+      "Europe/Lisbon": "Lisbon <small>(PRT)</small>",
+      "Europe/Paris": "Paris <small>(FRA)</small>",
+      "America/Sao_Paulo": "Rio de Janeiro <small>(BRA)</small>",
+    };
 
-  lapopieDateElement.innerHTML = lapopieTime.format("dddd, Do");
-  lapopieTimeElement.innerHTML = lapopieTime.format(
-    "hh:mm [<small>]A[</small>]"
-  );
+    const selectedCityElement = document.querySelector("#selected-city");
 
-  let thailandElement = document.querySelector("#thailand");
-  let thailandDateElement = thailandElement.querySelector(".date");
-  let thailandTimeElement = thailandElement.querySelector(".time");
-  let thailandTime = moment().tz("Asia/Bangkok");
+    selectedCityElement.querySelector("h2").innerHTML = cityNames[cityTimeZone];
+    selectedCityElement.querySelector(".time").innerHTML = cityTime.format(
+      "hh:mm [<small>]A[</small>]"
+    );
+  }
 
-  thailandDateElement.innerHTML = thailandTime.format("dddd, Do");
-  thailandTimeElement.innerHTML = thailandTime.format(
-    "hh:mm [<small>]A[</small>]"
-  );
-}
+  displayUserLocationTime();
+  updateTime();
+  setInterval(updateTime, 1000);
 
-function updateCity(event) {
-  let cityTimeZone = event.target.value;
-  let cityTime = moment().tz(cityTimeZone);
-
-  let cityNames = {
-    "Africa/Casablanca": "Fès <small>(MAR)</small>",
-    "Europe/Lisbon": "Lisbon <small>(PRT)</small>",
-    "Europe/Paris": "Paris <small>(FRA)</small>",
-    "America/Sao_Paulo": "Rio de Janeiro <small>(BRA)</small>",
-  };
-
-  let cityName = cityNames[cityTimeZone] || "City not found";
-
-  let selectedCityElement = document.querySelector("#selected-city");
-  selectedCityElement.innerHTML = `
-    <div class="city">
-      <div>
-        <h2>${cityName}</h2>
-        <div class="date">${cityTime.format("dddd, Do")}</div>
-      </div>
-      <div class="time">${cityTime.format("hh:mm [<small>]A[</small>]")}</div>
-    </div>
-    <a href="/">All cities</>
-  `;
-}
-
-updateTime();
-setInterval(updateTime, 1000);
-
-let citiesSelectElement = document.querySelector("#city");
-citiesSelectElement.addEventListener("change", updateCity);
+  document.querySelector("#city").addEventListener("change", updateCity);
+});
